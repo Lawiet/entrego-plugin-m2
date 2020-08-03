@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+    <group id="klk_carriers">
+        <job name="klikealo_entrego_create" instance="Klikealo\Entrego\Cron\Monitor" method="notifyOrders">
+            <schedule>*/10 * * * *</schedule>
+        </job>
+        <!-- <job name="klikealo_entrego_tracking" instance="Klikealo\Entrego\Cron\Monitor" method="getTracking">
+            <schedule>* * * * *</schedule>
+        </job> -->
+    </group>
+</config>

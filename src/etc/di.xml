@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+
+    <virtualType name="Klikealo\Entrego\Logger\EntregoDebug" type="Magento\Framework\Logger\Handler\Base">
+        <arguments>
+            <argument name="fileName" xsi:type="string">/var/log/entrego.log</argument>
+         </arguments>
+    </virtualType>
+    <virtualType name="Klikealo\Entrego\Logger\EntregoLogger" type="Magento\Framework\Logger\Monolog">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="debug" xsi:type="object">Klikealo\Entrego\Logger\EntregoDebug</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Klikealo\Entrego\Cron\Monitor">
+        <arguments>
+            <argument name="logger" xsi:type="object">Klikealo\Entrego\Logger\EntregoLogger</argument>
+        </arguments>
+    </type>
+</config>

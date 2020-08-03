@@ -1,0 +1,25 @@
+{
+    "name": "lawiet/entrego-plugin-m2",
+    "description": "Entrego integration plugin",
+    "type": "magento2-component",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "version" : "1.0.0",
+    "authors": [
+        {
+            "name": "Jose Ramos",
+            "email": "jramosch@klikealo.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Klikealo\\Entrego\\": "src"
+        },
+        "files": [
+            "src/registration.php"
+        ]
+    }
+}
